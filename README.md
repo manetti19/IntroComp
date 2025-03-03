@@ -1,1 +1,1 @@
-# IntroComp
+# Estudo de Introdução à Computação do 1° ano de IME
