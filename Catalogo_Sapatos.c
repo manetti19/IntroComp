@@ -58,7 +58,7 @@ void adicionarSapato(Sapato sapatos[], int *totalSapatos) {
         return;
     }
     printf("Nome do sapato: ");
-    scanf(" %49[^"]", sapatos[*totalSapatos].nome);
+    scanf(" %49[\n]", sapatos[*totalSapatos].nome);
     sapatos[*totalSapatos].totalNumeracoes = 0;
     (*totalSapatos)++;
     salvarCatalogo(sapatos, *totalSapatos);
