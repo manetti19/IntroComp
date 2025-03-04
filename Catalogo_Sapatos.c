@@ -58,7 +58,7 @@ void adicionarSapato(Sapato sapatos[], int *totalSapatos) {
         return;
     }
     printf("Nome do sapato: ");
-    scanf(" %49[\n]", sapatos[*totalSapatos].nome);
+    scanf(" %49[^\n]", sapatos[*totalSapatos].nome);
     sapatos[*totalSapatos].totalNumeracoes = 0;
     (*totalSapatos)++;
     salvarCatalogo(sapatos, *totalSapatos);
@@ -78,6 +78,12 @@ void removerSapato(Sapato sapatos[], int *totalSapatos) {
     }
     (*totalSapatos)--;
     salvarCatalogo(sapatos, *totalSapatos);
+}
+
+void removerTodosSapatos(Sapato sapatos[], int *totalSapatos) {
+    *totalSapatos = 0;
+    salvarCatalogo(sapatos, *totalSapatos);
+    printf("Todos os sapatos foram removidos do catalogo.\n");
 }
 
 void adicionarNumeracao(Sapato sapatos[], int totalSapatos) {
@@ -139,6 +145,7 @@ int main() {
         printf("3 - Remover sapato\n");
         printf("4 - Adicionar numeracao\n");
         printf("5 - Remover numeracao\n");
+        printf("6 - Remover todos os sapatos\n");
         printf("0 - Sair\n");
         printf("Escolha: ");
         scanf("%d", &opcao);
@@ -148,6 +155,7 @@ int main() {
             case 3: removerSapato(sapatos, &totalSapatos); break;
             case 4: adicionarNumeracao(sapatos, totalSapatos); break;
             case 5: removerNumeracao(sapatos, totalSapatos); break;
+            case 6: removerTodosSapatos(sapatos, &totalSapatos); break;
             case 0: break;
             default: printf("Opcao invalida!\n");
         }
